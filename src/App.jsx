@@ -13,13 +13,13 @@ import StudentLogin from "./components/student/StudentLogin";
 import ProjectGroup from "./components/student/ProjectGroup";
 
 // academician pages
-import DoctorProfile from "./components/temp/DoctorProfile";
-import ProjectGroups from "./components/temp/seniorGroups/ProjectGroups";
-import AcademicianLogin from "./components/temp/AcademicianLogin";
-import DoctorCourse from "./components/temp/courses/DoctorCourse";
-import DoctorProjectGroup from "./components/temp/DoctorProjectGroup";
-import DoctorDashboard from "./components/temp/DoctorDashboard";
-import DoctorRequests from "./components/temp/request/DoctorRequests";
+import DoctorProfile from "./components/academician/DoctorProfile";
+import ProjectGroups from "./components/academician/seniorGroups/ProjectGroups";
+import AcademicianLogin from "./components/academician/AcademicianLogin";
+import DoctorCourse from "./components/academician/courses/DoctorCourse";
+import DoctorProjectGroup from "./components/academician/DoctorProjectGroup";
+import DoctorDashboard from "./components/academician/DoctorDashboard";
+import DoctorRequests from "./components/academician/request/DoctorRequests";
 
 import Courses from "./components/Courses";
 import Academician from "./components/Academician";

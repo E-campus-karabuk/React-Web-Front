@@ -8,7 +8,7 @@ import Delete from "../../../public/Delete";
 import Edit from "../../../public/Edit";
 import api from "../../utils/Request";
 import { useState } from "react";
-import EditGroupModal from "../temp/seniorGroups/EditGroupModal";
+import EditGroupModal from "../academician/seniorGroups/EditGroupModal";
 
 const Group = ({ group, delay, name, color1, color2 }) => {
   const [IsEditModalOpen, setIsEditModalOpen] = useState(false);
