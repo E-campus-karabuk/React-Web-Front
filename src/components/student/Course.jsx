@@ -113,7 +113,7 @@ const Course = () => {
             className="w-[50px] ml:w-[100px]"
           />
           <div className="flex items-start justify-between flex-col gap-0 w-[240px] py-[5px] px-[10px] bg-primary rounded-l-none rounded-r text-left">
-            <p className="w-full text-left text-white text-[14px] ml:text-[22px]">
+            <p className="w-full text-left text-white text-[14px] ml:text-[22px] capitalize">
               {`Dr. ${course?.lecturer[0]?.firstName} ${course?.lecturer[0]?.lastName}`}
             </p>
             <Link

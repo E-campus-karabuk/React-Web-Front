@@ -88,8 +88,8 @@ const DoctorCourse = () => {
     fetchCourseNotes();
   }, [courseId, notesPage, reportTitle, token]);
 
-  const deleteNote = async (id) => {
-    await api.delete(`/course/notes/remove/${id}`, {
+  const deleteNote = async (id, course) => {
+    await api.delete(`/course/notes/remove/${id}?course=${course}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -242,15 +242,12 @@ const DoctorCourse = () => {
                           <p className="font-mukta text-primary text-[15px]">
                             {note.title}
                           </p>
-                          <button
-                            onClick={() => {
-                              deleteNote(note._id);
-                            }}
+                          <span
+                            className="font-mukta text-primary text-[15px] sm:text-[20px] mxl:text-[22px] tracking-widest hover:cursor-pointer hover:text-red-600"
+                            onClick={() => deleteNote(note._id, course?._id)}
                           >
-                            <span className="font-mukta text-primary text-[15px] sm:text-[20px] mxl:text-[22px] tracking-widest">
-                              <FaRegTrashCan />
-                            </span>
-                          </button>
+                            <FaRegTrashCan />
+                          </span>
                         </div>
                         <div className="flex items-center justify-start w-full">
                           <p className="font-mukta text-primary text-[10px]">
