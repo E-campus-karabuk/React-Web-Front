@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import CurrentCourses from "../dashboard/CurrentCourses";
-import Shedule from "../dashboard/Shedule";
+import Schedule from "../dashboard/Schedule";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../motion/motion";
 import useAuth from "../../hooks/useAuth";
@@ -57,7 +57,7 @@ const DoctorDashboard = () => {
         !
       </motion.h2>
       <div className="container">
-        <Shedule courses={courses}></Shedule>
+        <Schedule courses={courses}></Schedule>
         <CurrentCourses courses={courses}></CurrentCourses>
       </div>
     </div>

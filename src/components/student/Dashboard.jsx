@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 // import React from "react";
 import CurrentCourses from "../dashboard/CurrentCourses";
-import Shedule from "../dashboard/Shedule";
+import Schedule from "../dashboard/Schedule";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../motion/motion";
 import useAuth from "../../hooks/useAuth";
@@ -63,8 +63,8 @@ const Dashboard = () => {
       </motion.h2>
 
       <div className="container">
-        <Shedule courses={courses} />{" "}
-        {/* Pass token as prop to Shedule component */}
+        <Schedule courses={courses} />{" "}
+        {/* Pass token as prop to Schedule component */}
         <CurrentCourses courses={courses} />{" "}
         {/* Pass token as prop to CurrentCourses component */}
       </div>
