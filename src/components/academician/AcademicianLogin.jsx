@@ -53,7 +53,7 @@ const Login = () => {
           className="w-[60px] sm:w-[68px]"
         />
         <h3 className="font-Montagu text-[17px] sm:text-[24px] text-center text-primary">
-          Academician Log-in
+          Academician Login
         </h3>
 
         <form
