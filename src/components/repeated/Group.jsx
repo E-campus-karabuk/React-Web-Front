@@ -21,7 +21,7 @@ const Group = ({ group, delay, name, color1, color2 }) => {
     setIsEditModalOpen(false);
   };
   const deleteGroup = async (id) => {
-    await api.delete(`/senior/${id}`, {
+    await api.delete(`/api/senior/${id}`, {
       // headers: {
       //   Authorization: `Bearer ${token}`,
       // },

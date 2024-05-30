@@ -31,7 +31,7 @@ const Profile = () => {
 
   useEffect(() => {
     const fetchStudent = async () => {
-      const student = await api.get("/auth/current", {
+      const student = await api.get("/api/auth/current", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -40,7 +40,7 @@ const Profile = () => {
     };
 
     const fetchCourses = async () => {
-      const courses = await api.get(`/course/list/mine?day=${day}`, {
+      const courses = await api.get(`/api/course/list/mine?day=${day}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -63,7 +63,7 @@ const DoctorCourse = () => {
 
   useEffect(() => {
     const fetchCourse = async () => {
-      const course = await api.get(`/course/${courseId}`, {
+      const course = await api.get(`/api/course/${courseId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -89,7 +89,7 @@ const DoctorCourse = () => {
   }, [courseId, notesPage, reportTitle, token]);
 
   const deleteNote = async (id, course) => {
-    await api.delete(`/course/notes/remove/${id}?course=${course}`, {
+    await api.delete(`/api/course/notes/remove/${id}?course=${course}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -28,7 +28,7 @@ const ProjectGroups = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get(`/senior/lecturer/list`, {
+        const response = await api.get(`/api/senior/lecturer/list`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

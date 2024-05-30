@@ -16,7 +16,7 @@ const DoctorDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/auth/current", {
+        const response = await api.get("/api/auth/current", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -28,7 +28,7 @@ const DoctorDashboard = () => {
     };
 
     const fetchCourses = async () => {
-      const courses = await api.get(`/course/list/mine?filter=current`, {
+      const courses = await api.get(`/api/course/list/mine?filter=current`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -39,7 +39,7 @@ const Academician = () => {
 
   useEffect(() => {
     const fetchAcademician = async () => {
-      const response = await api.get(`/academician/${userId}`, {
+      const response = await api.get(`/api/academician/${userId}`, {
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
@@ -48,7 +48,7 @@ const Academician = () => {
     };
 
     const fetchCourses = async () => {
-      const courses = await api.get(`/course/list/mine?day=${day}`, {
+      const courses = await api.get(`/api/course/list/mine?day=${day}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

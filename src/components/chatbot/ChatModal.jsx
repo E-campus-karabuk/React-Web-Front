@@ -54,7 +54,7 @@ function ChatBox() {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await api.post(`/bot/newChat`, {
+        const response = await api.post(`/api/bot/newChat`, {
           topic: topic,
           prompt: prompt,
           headers: { Authorization: `Bearer ${token}` },
