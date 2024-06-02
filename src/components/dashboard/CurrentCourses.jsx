@@ -5,7 +5,7 @@ import CurrentCourse from "../repeated/CurrentCourse";
 import { Link } from "react-router-dom";
 
 const CurrentCourses = ({ courses }) => {
-  const colors = ["FDFFE0", "E0EBFF", "FFE6E6", "E6FFEF"];
+  const colors = ["#FDFFE0", "#E0EBFF", "#FFE6E6", "#E6FFEF"];
 
   return (
     <div className="Courses mb-[150px]">
@@ -22,7 +22,7 @@ const CurrentCourses = ({ courses }) => {
                 }}
               >
                 <CurrentCourse
-                  color={`from-[#${colors[index % 4]}] to-white`}
+                  color={`from-[${colors[index % 4]}] to-white`}
                   code={course.courseCode}
                   module={course.courseName}
                   teacher={
