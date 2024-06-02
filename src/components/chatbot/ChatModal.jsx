@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import api from "../../utils/Request";
 import { FaRobot } from "react-icons/fa";
+import QuestionMark from "../../../public/QuestionMark";
 
 function ChatBox() {
   const [isChatboxOpen, setIsChatboxOpen] = useState(false);
@@ -139,29 +140,16 @@ function ChatBox() {
 
   return (
     <div className="fixed bottom-0 right-0 mb-4 mr-4 z-100">
-      <button
+      <div
         id="open-chat"
-        className={`bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 flex items-center ${
+        className={`question fixed bottom-[100px] sm:bottom-10 right-5 w-[63px] h-[63px] bg-primary flex items-center justify-center p-5 border border-white hover:border-secondary duration-0.3 rounded-full z-[100] cursor-pointer ${
           isChatboxOpen ? "hidden" : ""
         }`}
         onClick={toggleChatbox}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6 mr-2"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-          ></path>
-        </svg>
-        Chat with Ai Bot
-      </button>
+        <QuestionMark wth="100%" hth="100%" fill="white" />
+      </div>
+
       <div
         id="chat-container"
         className={`fixed bottom-16 right-4 w-96 ${
