@@ -73,6 +73,7 @@ function ChatBox() {
     if (finished) {
       fetchData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finished]);
 
   const toggleChatbox = () => {
@@ -168,7 +169,7 @@ function ChatBox() {
         }`}
       >
         <div className="bg-white shadow-md rounded-lg max-w-lg w-full z-100">
-          <div className="p-4 border-b bg-blue-500 text-white rounded-t-lg flex justify-between items-center">
+          <div className="p-4 border-b bg-primary text-white rounded-t-lg flex justify-between items-center">
             <p className="text-lg font-semibold">Ai Bot</p>
             <button
               id="close-chat"
@@ -198,7 +199,9 @@ function ChatBox() {
                 className={`mb-2 ${msg.isUser ? "text-right" : ""}`}
               >
                 <p
-                  className={`bg-${msg.isUser ? "blue" : "gray-300"}-500 text-${
+                  className={`bg-${
+                    msg.isUser ? "[#223F76]" : "gray-300"
+                  } text-${
                     msg.isUser ? "white font-semibold" : "gray-700"
                   } rounded-lg py-2 px-4 inline-block`}
                 >
@@ -216,7 +219,7 @@ function ChatBox() {
                 {topics.map((topic) => (
                   <button
                     key={topic.key}
-                    className="bg-blue-500 text-white rounded-lg py-2 px-4 ml-2 mt-2 inline-block"
+                    className="bg-primary text-white rounded-lg py-2 px-4 ml-2 mt-2 inline-block"
                     onClick={() => handleTopicSelection(topic.key)}
                   >
                     {topic.label}
@@ -239,7 +242,7 @@ function ChatBox() {
             <button
               disabled={!topic || isLoading}
               id="send-button"
-              className="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition disabled:bg-gray-600 duration-300"
+              className="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition disabled:bg-gray-600 duration-300"
               onClick={handleSendMessage}
             >
               Send
