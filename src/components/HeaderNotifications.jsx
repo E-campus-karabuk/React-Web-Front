@@ -1,7 +1,31 @@
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
 import ArrowDown from "../../public/ArrowDown";
 import Search from "../../public/Search";
+import useAuth from "../hooks/useAuth";
+import api from "../utils/Request";
 
 const HeaderNotifications = () => {
+  const admin = sessionStorage.getItem("admin");
+  const { token } = useAuth();
+  const [response, setResponse] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get(`/api/notification/`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
+        setResponse(response.data.noti);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [token]);
+
   const toggleFilter = () => {
     const filters = document.querySelector(".filters");
     if (filters.classList.contains("block")) {
@@ -12,12 +36,33 @@ const HeaderNotifications = () => {
       filters.classList.add("block");
     }
   };
+
+  const getTimeAgo = (createdAt) => {
+    const currentTime = new Date();
+    const notificationTime = new Date(createdAt);
+    const timeDifference = currentTime - notificationTime;
+    const seconds = Math.floor(timeDifference / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (days > 0) {
+      return `${days}d ago`;
+    } else if (hours > 0) {
+      return `${hours}h ago`;
+    } else if (minutes > 0) {
+      return `${minutes}m ago`;
+    } else {
+      return `${seconds}s ago`;
+    }
+  };
+
   return (
     <div className="header-notifications hidden absolute top-[66%] right-[10%] z-50 w-[460px] duration-0.3 bg-primary py-[20px] px-4 flex-col items-center justify-start gap-5 scale-90">
       <h3 className="font-Montagu text-[35px] text-white text-center">
         Notifications
       </h3>
-      <div className="w-full flex justify-between items-center gap-4">
+      {/* <div className="w-full flex justify-between items-center gap-4">
         <div className="basis-1/3 cursor-pointer flex items-center justify-center py-1 pl-[10px] pr-[8px] rounded bg-white">
           <p className=" font-Montagu text-[20px] text-primary">Recent</p>
         </div>
@@ -27,8 +72,9 @@ const HeaderNotifications = () => {
         <div className="basis-1/3 cursor-pointer flex items-center justify-center py-1 pl-[10px] pr-[8px] rounded bg-white">
           <p className=" font-Montagu text-[20px] text-primary">Show all</p>
         </div>
-      </div>
-      <div className="w-full flex justify-between items-center gap-4">
+      </div> */}
+      {/* TODO: Add the filter and search functionality */}
+      {/* <div className="w-full flex justify-between items-center gap-4">
         <div className="notif-search basis-2/3 h-[38px] relative cursor-pointer">
           <input
             type="text"
@@ -213,62 +259,33 @@ const HeaderNotifications = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="notif-box w-full border-t border-white flex flex-col items-center justify-start gap-3 py-3">
-        <div className="w-full flex justify-between items-center gap-2 rounded py-1 px-2 hover:bg-secondary cursor-pointer duration-0.3">
-          <img
-            src="./profile.png"
-            alt="profile"
-            className="w-[85px] basis-1/5"
-          />
-          <div className="flex flex-col items-start justify-between gap-1 basis-3/5">
-            <p className="font-Montagu text-white text-[20px] text-left">
-              Nesreen Bouta
-            </p>
-            <p className="font-Montagu text-white text-[14px] text-left">
-              Lorem ipsum dolor sit
-            </p>
-          </div>
-          <p className="basis-1/5 font-Montagu text-white text-[14px] text-left">
-            12.01.2023
-          </p>
-        </div>
-        <div className="w-full flex justify-between items-center gap-2 rounded py-1 px-2 hover:bg-secondary cursor-pointer duration-0.3">
-          <img
-            src="./profile.png"
-            alt="profile"
-            className="w-[85px] basis-1/5"
-          />
-          <div className="flex flex-col items-start justify-between gap-1 basis-3/5">
-            <p className="font-Montagu text-white text-[20px] text-left">
-              Nesreen Bouta
-            </p>
-            <p className="font-Montagu text-white text-[14px] text-left">
-              Lorem ipsum dolor sit
-            </p>
-          </div>
-          <p className="basis-1/5 font-Montagu text-white text-[14px] text-left">
-            12.01.2023
-          </p>
-        </div>
-        <div className="w-full flex justify-between items-center gap-2 rounded py-1 px-2 hover:bg-secondary cursor-pointer duration-0.3">
-          <img
-            src="./profile.png"
-            alt="profile"
-            className="w-[85px] basis-1/5"
-          />
-          <div className="flex flex-col items-start justify-between gap-1 basis-3/5">
-            <p className="font-Montagu text-white text-[20px] text-left">
-              Nesreen Bouta
-            </p>
-            <p className="font-Montagu text-white text-[14px] text-left">
-              Lorem ipsum dolor sit
-            </p>
-          </div>
-          <p className="basis-1/5 font-Montagu text-white text-[14px] text-left">
-            12.01.2023
-          </p>
-        </div>
+        {response?.slice(0, 3).map((notification, index) => {
+          return (
+            <div
+              key={notification._id}
+              className="w-full flex justify-between items-center gap-2 rounded py-1 px-2 hover:bg-secondary cursor-pointer duration-0.3"
+            >
+              <img
+                src="./profile.png"
+                alt="profile"
+                className="w-[85px] basis-1/5"
+              />
+              <div className="flex flex-col items-start justify-between gap-1 basis-3/5">
+                <p className="font-Montagu text-white text-[20px] text-left">
+                  {notification.title}
+                </p>
+                <p className="font-Montagu text-white text-[14px] text-left">
+                  {notification.content}
+                </p>
+              </div>
+              <p className="basis-1/5 font-Montagu text-white text-[14px] text-left">
+                {getTimeAgo(notification.createdAt)}
+              </p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
