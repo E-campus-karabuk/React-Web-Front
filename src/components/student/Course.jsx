@@ -62,7 +62,7 @@ const Course = () => {
 
     const fetchCourseNotes = async () => {
       const courseNotes = await api.get(
-        `/course/notes/${courseId}?page=${notesPage}&title=${reportTitle}`,
+        `/api/course/notes/${courseId}?page=${notesPage}&title=${reportTitle}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

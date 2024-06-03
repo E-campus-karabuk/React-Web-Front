@@ -22,7 +22,7 @@ const ModalComponent = ({ onClose, isOpen, newRequest }) => {
     setLoading(true);
     try {
       const response = await api.put(
-        `/request/reply/${newRequest?._id}`,
+        `/api/request/reply/${newRequest?._id}`,
         { reply: textAreaValue },
         {
           headers: {

@@ -58,7 +58,7 @@ const ProjectGroup = () => {
     };
     const fetchGroupReports = async () => {
       const groupReports = await api.get(
-        `/senior/files/${group.group._id}?page=${reportsPage}&title=${reportTitle}`,
+        `/api/senior/files/${group.group._id}?page=${reportsPage}&title=${reportTitle}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

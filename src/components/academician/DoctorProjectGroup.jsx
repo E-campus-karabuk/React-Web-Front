@@ -61,7 +61,7 @@ const DoctorProjectGroup = () => {
     };
     const fetchGroupReports = async () => {
       const groupReports = await api.get(
-        `/senior/files/${groupId}?page=${reportsPage}&title=${reportTitle}`,
+        `/api/senior/files/${groupId}?page=${reportsPage}&title=${reportTitle}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
