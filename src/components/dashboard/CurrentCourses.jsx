@@ -26,7 +26,9 @@ const CurrentCourses = ({ courses }) => {
                   code={course.courseCode}
                   module={course.courseName}
                   teacher={
-                    course.lecturer.position + " " + course.lecturer.name
+                    course.lecturer[0].firstName +
+                    " " +
+                    course.lecturer[0].lastName
                   }
                   delay="0.5"
                 />

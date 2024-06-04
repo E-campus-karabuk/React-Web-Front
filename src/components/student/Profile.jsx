@@ -40,11 +40,14 @@ const Profile = () => {
     };
 
     const fetchCourses = async () => {
-      const courses = await api.get(`/course/list/mine?day=${day}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const courses = await api.get(
+        `/course/list/mine?day=${day}&filter=current`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setCourses(courses.data);
     };
 
