@@ -97,7 +97,9 @@ const Academician = () => {
             <Graduate wth="100%" hth="100%" fill="white" />
           </div>
           <p className="font-normal font-Montagu text-[12px] sm:text-[18px] text-white flex-1 text-left sm:text-center">
-            {academician?.data?.departmentId.name} - Faculty of Engineering
+            {/* TODO: FIX THE DEPARTMENT NAME */}
+            {academician?.data?.departmentId?.name || "Computer Engineering"} -
+            Faculty of Engineering
           </p>
         </motion.div>
 
