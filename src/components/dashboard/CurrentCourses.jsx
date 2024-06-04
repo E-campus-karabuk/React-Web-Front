@@ -22,7 +22,7 @@ const CurrentCourses = ({ courses }) => {
                 }}
               >
                 <CurrentCourse
-                  color={`from-[${colors[index % 4]}] to-white`}
+                  color={`from-[${colors[index % colors.length]}] to-white`}
                   code={course.courseCode}
                   module={course.courseName}
                   teacher={
