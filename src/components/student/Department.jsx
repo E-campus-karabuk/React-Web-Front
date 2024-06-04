@@ -332,11 +332,11 @@ const Department = () => {
               </div>
             </div>
             <div className="container courses-container overflow-hidden duration-0.3">
-              <div className="content relative flex items-center justify-between mb-6">
+              <div className="content  flex items-center justify-between mb-6">
+                <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
+                  Fall Semester
+                </h3>
                 <div className="fall basis-1/2 flex flex-col items-center justify-between gap-[25px]">
-                  <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
-                    Fall Semester
-                  </h3>
                   <div className="fall-courses w-full px-2 sm:px-4 mxl:px-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-[18px] gap-y-[12px]">
                       {response ? (
@@ -365,10 +365,10 @@ const Department = () => {
                   </div>
                 </div>
                 <span className="block w-[1px] h-[300px] mxl:h-[500px] bg-[#E6E6E6]"></span>
+                <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
+                  Spring Semester
+                </h3>
                 <div className="Spring basis-1/2  flex flex-col items-center justify-between gap-[25px]">
-                  <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
-                    Spring Semester
-                  </h3>
                   <div className="spring-courses w-full px-2 sm:px-4 mxl:px-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-[18px] gap-y-[12px]">
                       {response ? (
@@ -418,11 +418,11 @@ const Department = () => {
               </div>
             </div>
             <div className="container courses-container overflow-hidden duration-0.3 hidden">
-              <div className="content relative flex items-center justify-between mb-6">
+              <div className="content flex items-center justify-between mb-6">
+                <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
+                  Fall Semester
+                </h3>
                 <div className="fall basis-1/2 flex flex-col items-center justify-between gap-[25px]">
-                  <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
-                    Fall Semester
-                  </h3>
                   <div className="fall-courses w-full px-2 sm:px-4 mxl:px-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-[18px] gap-y-[12px]">
                       {response ? (
@@ -431,7 +431,7 @@ const Department = () => {
                             return (
                               <div
                                 key={corse._id}
-                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#FFE6E6] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
+                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#9DF6BB] shadow-3xl duration-0.3 hover:-translate-y-1 cursor-pointer"
                               >
                                 <p className="text-center font-mukta text-[10px] sm:text-[18px] mxl:text-[25px] text-primary">
                                   <span className="text-secondary">
@@ -451,10 +451,10 @@ const Department = () => {
                   </div>
                 </div>
                 <span className="block w-[1px] h-[300px] mxl:h-[500px] bg-[#E6E6E6]"></span>
-                <div className="Spring basis-1/2  flex flex-col items-center justify-between gap-[25px]">
-                  <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
-                    Spring Semester
-                  </h3>
+                <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
+                  Spring Semester
+                </h3>
+                <div className="spring basis-1/2 flex flex-col items-center justify-between gap-[25px]">
                   <div className="spring-courses w-full px-2 sm:px-4 mxl:px-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-[18px] gap-y-[12px]">
                       {response ? (
@@ -463,7 +463,7 @@ const Department = () => {
                             return (
                               <div
                                 key={corse._id}
-                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#FFE6E6] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
+                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#9DF6BB] shadow-3xl duration-0.3 hover:-translate-y-1 cursor-pointer"
                               >
                                 <p className="text-center font-mukta text-[10px] sm:text-[18px] mxl:text-[25px] text-primary">
                                   <span className="text-secondary">
@@ -504,11 +504,11 @@ const Department = () => {
               </div>
             </div>
             <div className="container courses-container overflow-hidden duration-0.3 hidden">
-              <div className="content relative flex items-center justify-between mb-6">
+              <div className="content  flex items-center justify-between mb-6">
+                <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
+                  Fall Semester
+                </h3>
                 <div className="fall basis-1/2 flex flex-col items-center justify-between gap-[25px]">
-                  <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
-                    Fall Semester
-                  </h3>
                   <div className="fall-courses w-full px-2 sm:px-4 mxl:px-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-[18px] gap-y-[12px]">
                       {response ? (
@@ -517,7 +517,7 @@ const Department = () => {
                             return (
                               <div
                                 key={corse._id}
-                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#FFE6E6] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
+                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#87A4DA] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
                               >
                                 <p className="text-center font-mukta text-[10px] sm:text-[18px] mxl:text-[25px] text-primary">
                                   <span className="text-secondary">
@@ -537,10 +537,10 @@ const Department = () => {
                   </div>
                 </div>
                 <span className="block w-[1px] h-[300px] mxl:h-[500px] bg-[#E6E6E6]"></span>
+                <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
+                  Spring Semester
+                </h3>
                 <div className="Spring basis-1/2  flex flex-col items-center justify-between gap-[25px]">
-                  <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
-                    Spring Semester
-                  </h3>
                   <div className="spring-courses w-full px-2 sm:px-4 mxl:px-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-[18px] gap-y-[12px]">
                       {response ? (
@@ -549,7 +549,7 @@ const Department = () => {
                             return (
                               <div
                                 key={corse._id}
-                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#FFE6E6] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
+                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#87A4DA] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
                               >
                                 <p className="text-center font-mukta text-[10px] sm:text-[18px] mxl:text-[25px] text-primary">
                                   <span className="text-secondary">
@@ -590,11 +590,11 @@ const Department = () => {
               </div>
             </div>
             <div className="container courses-container overflow-hidden duration-0.3 hidden">
-              <div className="content relative flex items-center justify-between mb-6">
+              <div className="content  flex items-center justify-between mb-6">
+                <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
+                  Fall Semester
+                </h3>
                 <div className="fall basis-1/2 flex flex-col items-center justify-between gap-[25px]">
-                  <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
-                    Fall Semester
-                  </h3>
                   <div className="fall-courses w-full px-2 sm:px-4 mxl:px-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-[18px] gap-y-[12px]">
                       {response ? (
@@ -603,7 +603,7 @@ const Department = () => {
                             return (
                               <div
                                 key={corse._id}
-                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#FFE6E6] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
+                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#F4FBA3] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
                               >
                                 <p className="text-center font-mukta text-[10px] sm:text-[18px] mxl:text-[25px] text-primary">
                                   <span className="text-secondary">
@@ -623,10 +623,10 @@ const Department = () => {
                   </div>
                 </div>
                 <span className="block w-[1px] h-[300px] mxl:h-[500px] bg-[#E6E6E6]"></span>
+                <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
+                  Spring Semester
+                </h3>
                 <div className="Spring basis-1/2  flex flex-col items-center justify-between gap-[25px]">
-                  <h3 className="font-Montagu text-[15px] sm:text-[25px] mxl:text-[45px] text-primary text-center">
-                    Spring Semester
-                  </h3>
                   <div className="spring-courses w-full px-2 sm:px-4 mxl:px-6">
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-[18px] gap-y-[12px]">
                       {response ? (
@@ -635,7 +635,7 @@ const Department = () => {
                             return (
                               <div
                                 key={corse._id}
-                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#FFE6E6] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
+                                className="department-course w-full flex items-center justify-center h-[80px] sm:h-[150px] mxl:h-[240px] px-1 sm:px-2 mxl:px-4 rounded bg-gradient-to-b from-[#F4FBA3] shadow-3xl  duration-0.3 hover:-translate-y-1 cursor-pointer"
                               >
                                 <p className="text-center font-mukta text-[10px] sm:text-[18px] mxl:text-[25px] text-primary">
                                   <span className="text-secondary">

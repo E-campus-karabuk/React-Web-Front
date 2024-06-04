@@ -188,8 +188,8 @@ function ChatBox() {
               >
                 <p
                   className={`bg-${
-                    msg.isUser ? "[#223F76]" : "gray-300"
-                  } text-${
+                    msg.isUser ? "blue-800/10" : "gray-300"
+                  } text ${
                     msg.isUser ? "white font-semibold" : "gray-700"
                   } rounded-lg py-2 px-4 inline-block`}
                 >

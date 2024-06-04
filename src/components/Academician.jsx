@@ -210,7 +210,7 @@ const Academician = () => {
               viewport={{ once: true }}
               className="first-year-courses mb-3"
             >
-              <div className="courses-head flex items-center justify-between rounded bg-[#FFE6E6] mb-3">
+              {/* <div className="courses-head flex items-center justify-between rounded bg-[#FFE6E6] mb-3">
                 <h2 className="pl-7 font-mukta text-primary text-[20px] sm:text-[35px] mxl:text-[55px]">
                   Academic Information
                 </h2>
@@ -224,7 +224,7 @@ const Academician = () => {
                     <ArrowDown wth="100%" hth="100%" fill="#FFE6E6" />
                   )}
                 </div>
-              </div>
+              </div> */}
               <div className="container courses-container overflow-hidden duration-700">
                 <div className="flex flex-col items-start justify-start mt-12 gap-[60px]">
                   {academician?.data?.academicInformation?.map(
