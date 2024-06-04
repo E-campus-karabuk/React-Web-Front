@@ -22,15 +22,18 @@ const Courses = () => {
 
   useEffect(() => {
     const fetchCurrentCourses = async () => {
-      const currentCourses = await api.get("/course/list/mine?filter=current", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const currentCourses = await api.get(
+        "/api/course/list/mine?filter=current",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setCurrentCourses(currentCourses.data);
     };
     const fetchPastCourses = async () => {
-      const pastCourses = await api.get("/course/list/mine?filter=past", {
+      const pastCourses = await api.get("/api/course/list/mine?filter=past", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

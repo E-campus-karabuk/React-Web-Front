@@ -45,7 +45,7 @@ const ModalComponent = ({ onClose, isOpen, newRequest }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const request = await api.get(`/request/student/lecturers`, {
+        const request = await api.get(`/api/request/student/lecturers`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setStudentLecturers(request.data);

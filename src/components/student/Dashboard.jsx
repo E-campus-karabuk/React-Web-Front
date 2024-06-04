@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 // import React from "react";
 import CurrentCourses from "../dashboard/CurrentCourses";
-import Shedule from "../dashboard/Shedule";
+import Schedule from "../dashboard/Schedule";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../motion/motion";
 import useAuth from "../../hooks/useAuth";
@@ -18,7 +18,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/auth/current", {
+        const response = await api.get("/api/auth/current", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -30,7 +30,7 @@ const Dashboard = () => {
     };
 
     const fetchCourses = async () => {
-      const courses = await api.get(`/course/list/mine?filter=current`, {
+      const courses = await api.get(`/api/course/list/mine?filter=current`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -63,8 +63,8 @@ const Dashboard = () => {
       </motion.h2>
 
       <div className="container">
-        <Shedule courses={courses} />{" "}
-        {/* Pass token as prop to Shedule component */}
+        <Schedule courses={courses} />{" "}
+        {/* Pass token as prop to Schedule component */}
         <CurrentCourses courses={courses} />{" "}
         {/* Pass token as prop to CurrentCourses component */}
       </div>

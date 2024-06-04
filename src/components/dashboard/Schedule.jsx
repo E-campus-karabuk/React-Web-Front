@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import SectionTitle from "../repeated/SectionTitle";
-import TimeLine from "../repeated/TimeLine";
+import SectionTitle from "../repeated/SectionTitle.jsx";
+import TimeLine from "../repeated/TimeLine.jsx";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../motion/motion";
+import { fadeIn } from "../../motion/motion.jsx";
 import api from "../../utils/Request.js";
 import useAuth from "../../hooks/useAuth.js";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Shedule = ({ courses }) => {
+const Schedule = ({ courses }) => {
   if (courses) {
     courses = courses.slice().sort((a, b) => {
       // Extracting the time strings from each object
@@ -143,4 +143,4 @@ const Shedule = ({ courses }) => {
   );
 };
 
-export default Shedule;
+export default Schedule;

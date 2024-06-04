@@ -21,7 +21,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     // console.log(data);
     try {
-      const response = await api.post("/auth/login", data);
+      const response = await api.post("/api/auth/login", data);
       // console.log(response);
       const { token, email, role } = response.data;
       if (!role.includes("Student"))

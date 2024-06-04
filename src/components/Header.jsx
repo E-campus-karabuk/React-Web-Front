@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import Bell from "../../public/Bell";
 import Envlope from "../../public/Envlope";
@@ -113,12 +114,12 @@ const Header = () => {
           >
             <Bell />
           </div>
-          <div
+          {/* <div
             className="w-8 h-8 flex justify-center items-center cursor-pointer"
             onClick={toggleMessages}
           >
             <Envlope />
-          </div>
+          </div> */}
           <div className="w-8 h-8 flex justify-center items-center cursor-pointer">
             <Link to="/">
               <House />

@@ -92,13 +92,13 @@ const DoctorRequests = () => {
       try {
         const [newRes, pastRes] = await Promise.all([
           api.get(
-            `/request/lecturer?status=unreplied&page=${currentPage}&type=${currentTypeFilter}`,
+            `/api/request/lecturer?status=unreplied&page=${currentPage}&type=${currentTypeFilter}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
           ),
           api.get(
-            `/request/lecturer?status=replied&page=${pastPage}&type=${pastTypeFilter}`,
+            `/api/request/lecturer?status=replied&page=${pastPage}&type=${pastTypeFilter}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import CurrentCourses from "../dashboard/CurrentCourses";
-import Shedule from "../dashboard/Shedule";
+import Schedule from "../dashboard/Schedule";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../motion/motion";
 import useAuth from "../../hooks/useAuth";
@@ -16,7 +16,7 @@ const DoctorDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await api.get("/auth/current", {
+        const response = await api.get("/api/auth/current", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -28,7 +28,7 @@ const DoctorDashboard = () => {
     };
 
     const fetchCourses = async () => {
-      const courses = await api.get(`/course/list/mine?filter=current`, {
+      const courses = await api.get(`/api/course/list/mine?filter=current`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -57,7 +57,7 @@ const DoctorDashboard = () => {
         !
       </motion.h2>
       <div className="container">
-        <Shedule courses={courses}></Shedule>
+        <Schedule courses={courses}></Schedule>
         <CurrentCourses courses={courses}></CurrentCourses>
       </div>
     </div>

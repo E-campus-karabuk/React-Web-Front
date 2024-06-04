@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import api from "../../utils/Request";
 import { FaRobot } from "react-icons/fa";
+import QuestionMark from "../../../public/QuestionMark";
 
 function ChatBox() {
   const [isChatboxOpen, setIsChatboxOpen] = useState(false);
@@ -54,7 +55,7 @@ function ChatBox() {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await api.post(`/bot/newChat`, {
+        const response = await api.post(`/api/bot/newChat`, {
           topic: topic,
           prompt: prompt,
           headers: { Authorization: `Bearer ${token}` },
@@ -73,6 +74,7 @@ function ChatBox() {
     if (finished) {
       fetchData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finished]);
 
   const toggleChatbox = () => {
@@ -138,29 +140,16 @@ function ChatBox() {
 
   return (
     <div className="fixed bottom-0 right-0 mb-4 mr-4 z-100">
-      <button
+      <div
         id="open-chat"
-        className={`bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 flex items-center ${
+        className={`question fixed bottom-[100px] sm:bottom-10 right-5 w-[63px] h-[63px] bg-primary flex items-center justify-center p-5 border border-white hover:border-secondary duration-0.3 rounded-full z-[100] cursor-pointer ${
           isChatboxOpen ? "hidden" : ""
         }`}
         onClick={toggleChatbox}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6 mr-2"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-          ></path>
-        </svg>
-        Chat with Ai Bot
-      </button>
+        <QuestionMark wth="100%" hth="100%" fill="white" />
+      </div>
+
       <div
         id="chat-container"
         className={`fixed bottom-16 right-4 w-96 ${
@@ -168,7 +157,7 @@ function ChatBox() {
         }`}
       >
         <div className="bg-white shadow-md rounded-lg max-w-lg w-full z-100">
-          <div className="p-4 border-b bg-blue-500 text-white rounded-t-lg flex justify-between items-center">
+          <div className="p-4 border-b bg-primary text-white rounded-t-lg flex justify-between items-center">
             <p className="text-lg font-semibold">Ai Bot</p>
             <button
               id="close-chat"
@@ -198,7 +187,9 @@ function ChatBox() {
                 className={`mb-2 ${msg.isUser ? "text-right" : ""}`}
               >
                 <p
-                  className={`bg-${msg.isUser ? "blue" : "gray-300"}-500 text-${
+                  className={`bg-${
+                    msg.isUser ? "[#223F76]" : "gray-300"
+                  } text-${
                     msg.isUser ? "white font-semibold" : "gray-700"
                   } rounded-lg py-2 px-4 inline-block`}
                 >
@@ -216,7 +207,7 @@ function ChatBox() {
                 {topics.map((topic) => (
                   <button
                     key={topic.key}
-                    className="bg-blue-500 text-white rounded-lg py-2 px-4 ml-2 mt-2 inline-block"
+                    className="bg-primary text-white rounded-lg py-2 px-4 ml-2 mt-2 inline-block"
                     onClick={() => handleTopicSelection(topic.key)}
                   >
                     {topic.label}
@@ -239,7 +230,7 @@ function ChatBox() {
             <button
               disabled={!topic || isLoading}
               id="send-button"
-              className="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition disabled:bg-gray-600 duration-300"
+              className="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition disabled:bg-gray-600 duration-300"
               onClick={handleSendMessage}
             >
               Send

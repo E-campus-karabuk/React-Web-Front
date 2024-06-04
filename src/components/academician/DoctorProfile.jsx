@@ -21,7 +21,7 @@ const DoctorProfile = () => {
 
   useEffect(() => {
     const fetchAcademician = async () => {
-      const response = await api.get("/auth/current", {
+      const response = await api.get("/api/auth/current", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -30,7 +30,7 @@ const DoctorProfile = () => {
     };
 
     const fetchCourses = async () => {
-      const courses = await api.get(`/course/list/mine?day=${day}`, {
+      const courses = await api.get(`/api/course/list/mine?day=${day}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

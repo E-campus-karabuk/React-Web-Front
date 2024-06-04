@@ -63,7 +63,7 @@ const ModalComponent = ({ onClose, isOpen, group }) => {
     setLoading(true);
     try {
       const response = await api.put(
-        `/senior/update/${group._id}`,
+        `/api/senior/update/${group._id}`,
         { title: title, students: studentIds }, // Pass FormData instead of an object
         {
           headers: {

@@ -52,7 +52,7 @@ const DoctorProjectGroup = () => {
 
   useEffect(() => {
     const fetchGroup = async () => {
-      const group = await api.get(`/senior/${groupId}`, {
+      const group = await api.get(`/api/senior/${groupId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -61,7 +61,7 @@ const DoctorProjectGroup = () => {
     };
     const fetchGroupReports = async () => {
       const groupReports = await api.get(
-        `/senior/files/${groupId}?page=${reportsPage}&title=${reportTitle}`,
+        `/api/senior/files/${groupId}?page=${reportsPage}&title=${reportTitle}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -77,7 +77,7 @@ const DoctorProjectGroup = () => {
   }, [token, groupId, reportsPage, reportTitle]);
 
   const deleteGroup = async (id) => {
-    await api.delete(`/report/remove/${id}`, {
+    await api.delete(`/api/report/remove/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
