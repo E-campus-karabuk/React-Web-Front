@@ -41,7 +41,7 @@ const ModalComponent = ({ onClose, isOpen, courseId }) => {
       formData.append("description", description);
       formData.append("Note", file); // Append the file to FormData
       const response = await api.post(
-        "/course/uploadNote",
+        "/api/course/uploadNote",
         formData, // Pass FormData instead of an object
         {
           headers: {

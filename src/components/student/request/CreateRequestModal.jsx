@@ -66,7 +66,7 @@ const ModalComponent = ({ onClose, isOpen, newRequest }) => {
       formData.append("receiver", receiver);
       formData.append("file", file); // Append the file to FormData
       const response = await api.post(
-        "/request/create",
+        "/api/request/create",
         formData, // Pass FormData instead of an object
         {
           headers: {

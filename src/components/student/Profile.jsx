@@ -41,7 +41,7 @@ const Profile = () => {
 
     const fetchCourses = async () => {
       const courses = await api.get(
-        `/course/list/mine?day=${day}&filter=current`,
+        `/api/course/list/mine?day=${day}&filter=current`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

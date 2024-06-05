@@ -63,7 +63,7 @@ const ModalComponent = ({ onClose, isOpen }) => {
     setLoading(true);
     try {
       const response = await api.post(
-        "/senior/create",
+        "/api/senior/create",
         { title: title, students: studentIds }, // Pass FormData instead of an object
         {
           headers: {
