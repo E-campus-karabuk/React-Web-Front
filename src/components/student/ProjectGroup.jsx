@@ -9,6 +9,7 @@ import api from "../../utils/Request";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { FaRegTrashCan, FaEye } from "react-icons/fa6";
+import CreateReportModal from "./CreateReportModal";
 
 const ProjectGroup = () => {
   const admin = sessionStorage.getItem("admin");
@@ -18,6 +19,16 @@ const ProjectGroup = () => {
   const [reportsPage, setReportsPage] = useState(1);
   const [reportsTotalPage, setReportsTotalPage] = useState(1);
   const [reportTitle, setReportTitle] = useState("");
+  const [isCreateReportModalOpen, setIsCreateReportModalOpen] = useState(false);
+
+  const openCreateReportModal = () => {
+    setIsCreateReportModalOpen(true);
+  };
+
+  const closeCreateReportModal = () => {
+    setIsCreateReportModalOpen(false);
+  };
+
   function getFileExtension(filename) {
     // Use a regular expression to match the file extension
     const match = /\.([0-9a-z]+)$/i.exec(filename);
@@ -188,7 +199,10 @@ const ProjectGroup = () => {
               </div>
             </div>
             <div className="basis-3/5 sm:basis-1/4 flex items-center justify-end gap-1">
-              <div className="cursor-pointer flex items-center justify-between gap-1 py-1 pl-[10px] pr-[8px] rounded bg-white">
+              <div
+                className="cursor-pointer flex items-center justify-between gap-1 py-1 pl-[10px] pr-[8px] rounded bg-white"
+                onClick={() => openCreateReportModal()}
+              >
                 <p className=" font-Montagu text-[10px] ml:text-[16px] mxl:text-[20px] text-secondary">
                   Add Files
                 </p>
@@ -196,6 +210,11 @@ const ProjectGroup = () => {
                   +
                 </span>
               </div>
+              <CreateReportModal
+                isOpen={isCreateReportModalOpen}
+                onClose={closeCreateReportModal}
+                groupId={group?.group?._id}
+              />
             </div>
           </motion.div>
           <div className="flex flex-col justify-between items-center gap-10 py-5 px-3">
