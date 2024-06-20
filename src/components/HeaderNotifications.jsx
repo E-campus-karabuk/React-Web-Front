@@ -264,6 +264,11 @@ const HeaderNotifications = () => {
         {response?.slice(0, 3).map((notification, index) => {
           return (
             <div
+              onClick={() => {
+                notification.type[0] === "seniorReport"
+                  ? (window.location.href = "/project-group")
+                  : (window.location.href = "/requests");
+              }}
               key={notification._id}
               className="w-full flex justify-between items-center gap-2 rounded py-1 px-2 hover:bg-secondary cursor-pointer duration-0.3"
             >
