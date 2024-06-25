@@ -41,7 +41,9 @@ const ModalComponent = ({ onClose, isOpen, groupId }) => {
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
-
+  useEffect(() => {
+    setGroup(groupId);
+  }, [groupId]);
   const handleSendData = async () => {
     setLoading(true);
     try {
